@@ -51,6 +51,18 @@
 #include <linux/userfaultfd.h>
 #endif
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,9,0)
+#include <linux/close_range.h>
+#endif
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0)
+#include <linux/pidfd.h>
+#endif
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,11,0)
+#include <linux/sched/types.h>
+#endif
+
 #define DT_UNKNOWN 0
 #define DT_FIFO    1
 #define DT_CHR     2
